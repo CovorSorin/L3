@@ -3,14 +3,30 @@ package model;
 import java.util.ArrayList;
 
 public class Horaire {
-	
-	private int anneUniversitaire;
-	private ArrayList<Cours> cours;
-	
-	public Horaire(int anneUniversitaire, ArrayList<Cours> cours) {
+
+	private static int anneUniversitaire;
+	private static ArrayList<Cours> cours;
+
+	public Horaire(int anneUniversitaire) {
 		super();
-		this.anneUniversitaire = anneUniversitaire;
-		this.cours = new ArrayList<Cours>();
+		Horaire.anneUniversitaire = anneUniversitaire;
+		Horaire.cours = new ArrayList<Cours>();
 	}
-	
+
+	public static int getAnneUniversitaire() {
+		return anneUniversitaire;
+	}
+
+	public static void setAnneUniversitaire(int anneUniversitaire) {
+		Horaire.anneUniversitaire = anneUniversitaire;
+	}
+
+	public static ArrayList<Cours> getCours() {
+		return cours;
+	}
+
+	public static void addCours(Cours cours) {
+		Horaire.cours.add(cours);
+	}
+
 }

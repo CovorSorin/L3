@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.ListIterator;
 
 public class Horaire {
 
@@ -29,4 +30,7 @@ public class Horaire {
 		Horaire.cours.add(cours);
 	}
 
+
+	
+	
 }

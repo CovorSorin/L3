@@ -3,12 +3,12 @@ package model;
 public class Notification {
 
 	private String nom;
-	private Test test;
+	private Epreuve test;
 	private String son;
 	private int duree;
 	private EtatNotification etat;
 
-	public Notification(String nom, Test test) {
+	public Notification(String nom, Epreuve test) {
 		super();
 		this.nom = nom;
 		this.test = test;
@@ -45,11 +45,11 @@ public class Notification {
 		this.nom = nom;
 	}
 
-	public Test getTest() {
+	public Epreuve getTest() {
 		return test;
 	}
 
-	public void setTest(Test test) {
+	public void setTest(Epreuve test) {
 		this.test = test;
 	}
 
@@ -77,4 +77,11 @@ public class Notification {
 		this.etat = etat;
 	}
 
+	@Override
+	public String toString() {
+		return "Notification [nom=" + nom + ", test=" + test + ", son=" + son + ", duree=" + duree + ", etat=" + etat
+				+ "]";
+	}
+
+	
 }

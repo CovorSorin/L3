@@ -1,27 +1,31 @@
 package tests;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.junit.Before;
+import org.junit.Test;
 
 import model.*;
 
-class TestHoraire {
+public class TestHoraire {
 
 	Horaire horaire;
 	Cours cours;
 	Secretaire secretaire;
 	
-	@BeforeEach
-	void setUp() throws Exception {
+	@Before
+	public void setUp() throws Exception {
 		horaire = new Horaire(4);
 		cours = new Cours("Lundi", "Mathematique", 16, 5);
 		secretaire = new Secretaire("Maria", "Georgescu", "qwerty2");
 	}
 
 	@Test
-	void testAjouterCours() {
+	public void testAjouterCours() {
 		secretaire.ajouterCours(cours);
 		assertEquals(Horaire.getCours().size(), 1);
 	}

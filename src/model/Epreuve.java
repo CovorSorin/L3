@@ -2,14 +2,14 @@ package model;
 
 import java.util.Date;
 
-public class Test {
+public class Epreuve {
 	
 	private String nom;
 	private Date date;
 	private Cours cours;
 	private float note;
 //	 nu uita nota
-	public Test(String nom, Date date, Cours cours) {
+	public Epreuve(String nom, Date date, Cours cours) {
 		super();
 		this.nom = nom;
 		this.date = date;
@@ -48,13 +48,13 @@ public class Test {
 		this.note = note;
 	}
 	
-	public void modifierDate(Test t, Date d) {
+	public void modifierDate(Epreuve t, Date d) {
 		t.setDate(d);
 	}
 
 	@Override
 	public String toString() {
-		return "Test [nom=" + nom + ", date=" + date + ", cours=" + cours + ", note=" + note + "]";
+		return "Test [nom=" + nom + ", date=" + date+ "\n" + ", cours=" + cours + ", note=" + note + "]"+"\n";
 	}
 
 }

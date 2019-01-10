@@ -9,9 +9,9 @@ public class Professeur extends Utilisateur {
 
 	}
 	
-	public void etablirTest(String nom, Date date, Cours cours) {
-		Test test = new Test(nom, date, cours);
-		ListeTests.ajouterTest(test);
+	public void etablirTest(Epreuve t) {
+		
+		ListeTests.ajouterTest(t);
 	}
 	
 }

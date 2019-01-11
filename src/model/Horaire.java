@@ -6,12 +6,13 @@ import java.util.ListIterator;
 public class Horaire {
 
 	private static int anneUniversitaire;
-	private static ArrayList<Cours> cours;
-
+	private static ArrayList<Cours> listeCours;
+	private static int maxCours = 10;
+	
 	public Horaire(int anneUniversitaire) {
 		super();
 		Horaire.anneUniversitaire = anneUniversitaire;
-		Horaire.cours = new ArrayList<Cours>();
+		Horaire.listeCours = new ArrayList<Cours>();
 	}
 
 	public static int getAnneUniversitaire() {
@@ -23,14 +24,20 @@ public class Horaire {
 	}
 
 	public static ArrayList<Cours> getCours() {
-		return cours;
+		return listeCours;
 	}
 
-	public static void addCours(Cours cours) {
-		Horaire.cours.add(cours);
+	public static void addCours(String jour, String nom, int heure, int pointsCredit) {
+		Cours c = new Cours(jour, nom, heure, pointsCredit);
+		Horaire.listeCours.add(c);
 	}
 
+	public static int getMaxCours() {
+		return maxCours;
+	}
 
-	
-	
+	public static void setMaxCours(int maxCours) {
+		Horaire.maxCours = maxCours;
+	}
+
 }

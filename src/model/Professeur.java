@@ -9,9 +9,5 @@ public class Professeur extends Utilisateur {
 
 	}
 	
-	public void etablirTest(Epreuve t) {
-		
-		ListeTests.ajouterTest(t);
-	}
 	
 }

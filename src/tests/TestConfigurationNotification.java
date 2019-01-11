@@ -2,7 +2,6 @@ package tests;
 
 import static org.junit.Assert.*;
 
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -34,13 +33,86 @@ public class TestConfigurationNotification {
 		cours = new Cours("Vendredi", "VDE", 10, 3);
 		test = new Epreuve("test", date, cours);
 
-		professeur.etablirTest(test);
+		listeTests.ajouterTest("Test GL", date, cours);
 	}
 
 	@Test
-	public void testConfigurerSon() {
-		listeTests.getNotifications().get(0).configurerSon("samba2.mp3");
-		assertEquals(listeTests.getNotifications().get(0).getSon(), "samba2.mp3");
+	public void testConfigurerSon1() {
+		String nom = "samba2.mp3";
+
+		boolean correcte = true;
+
+		if (nom.length() == 3) {
+			correcte = false;
+		} else if (nom.length() > 3) {
+			String extension = nom.substring(nom.length() - 4);
+
+			if (extension.equals(".mp3")) {
+				correcte = true;
+			} else {
+				correcte = false;
+			}
+		} else {
+			correcte = false;
+		}
+
+		listeTests.getNotifications().get(0).configurerSon(nom);
+		
+		assertTrue(correcte);
+		assertEquals(listeTests.getNotifications().get(0).getSon(), nom);
+	}
+
+	@Test
+	public void testConfigurerSon2() {
+		String nom = "samba2";
+
+		boolean correcte = true;
+
+		if (nom.length() == 3) {
+			correcte = false;
+		} else if (nom.length() > 3) {
+			String extension = nom.substring(nom.length() - 4);
+
+			if (extension.equals(".mp3")) {
+				correcte = true;
+			} else {
+				correcte = false;
+			}
+		} else {
+			correcte = false;
+		}
+
+		listeTests.getNotifications().get(0).configurerSon(nom);
+		
+		assertFalse(correcte);
+		assertEquals(listeTests.getNotifications().get(0).getSon(), nom);
+	}
+
+
+	@Test
+	public void testConfigurerSon3() {
+		String nom = ".mp3";
+
+		boolean correcte = true;
+
+		if (nom.length() == 3) {
+			correcte = false;
+		} else if (nom.length() > 3) {
+			String extension = nom.substring(nom.length() - 4);
+
+			if (extension.equals(".mp3")) {
+				correcte = true;
+			} else {
+				correcte = false;
+			}
+		} else {
+			correcte = false;
+		}
+
+		listeTests.getNotifications().get(0).configurerSon(nom);
+		
+		assertTrue(correcte);
+		assertEquals(listeTests.getNotifications().get(0).getSon(), nom);
 	}
 
 	@Test
@@ -60,6 +132,5 @@ public class TestConfigurationNotification {
 		listeTests.getNotifications().get(0).prolongerNotification();
 		assertEquals(listeTests.getNotifications().get(0).getEtat(), EtatNotification.PROLONGEE);
 	}
-
 
 }

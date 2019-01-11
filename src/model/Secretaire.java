@@ -6,8 +6,4 @@ public class Secretaire extends Utilisateur {
 		super(nom, prenom, motDePasse);
 	}
 
-	public void ajouterCours(Cours cours) {
-		Horaire.addCours(cours);
-	}
-
 }

@@ -9,11 +9,12 @@ public class ListeTests {
 
 	private static ArrayList<Epreuve> tests = new ArrayList<Epreuve>();
 	private static ArrayList<Notification> notifications = new ArrayList<Notification>();
-
-	public static void ajouterTest(Epreuve test) {
-		tests.add(test);
-
-		Notification notification = new Notification(test.getNom(), test);
+	
+	
+	public static void ajouterTest(String nom, Date date, Cours cours) {
+		Epreuve ep = new Epreuve(nom, date, cours);
+		tests.add(ep);
+		Notification notification = new Notification(nom, ep);
 		notifications.add(notification);
 
 	}
